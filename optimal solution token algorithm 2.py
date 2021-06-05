@@ -24,8 +24,7 @@ class Continuous:
                 V = V_new
                 for k in range(n+1-1, N):
                     a_n[k] = A[n+1]
-                # print("a_n = ", a_n)
-                # print(f'E = {E} and V = {V}')
+
             else:
                 x = symbols('x')
                 E_new = E + (N-n)*(A[n+1] - A[n])
@@ -38,8 +37,7 @@ class Continuous:
                 n_star = n + 1
                 for k in range(n_star-1, N):
                     a_n[k] = A_sol
-                # print("a_n = ",a_n)
-                # print(f'E = {E} and V = {V}')
+
         return a_n
 
     def construct_pack(self, a_n):
@@ -50,17 +48,8 @@ class Continuous:
 
 
 if __name__ == "__main__":
-    A = np.array([2,3,7,4,9]) #np.array([1,2,4]) #np.array([3,4,5])
+    A = np.array([2,3,7,4,9]) 
     N = len(A)
-
-    # my_var = np.var(A)
-    # length = len(A)
-    # my_min = np.min(A)
-    # my_max = np.max(A)
-    # rand1 = np.random.randint(my_min, my_max + 1, size=length)
-    # rand2 = np.random.randint(my_min, my_max + 1, size=length)
-    # cov_rand = np.cov(rand1, rand2)[0, 0]
-    # var_red = cov_rand/my_var
     var_red = 2
 
     my_res_1 = Continuous(N, A, var_red)
