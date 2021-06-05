@@ -42,7 +42,6 @@ class Continuous:
 
     def construct_pack(self, a_n):
         M = np.linalg.norm((a_n), ord=1)
-        # print("norm L1 is", M)
         composition  = a_n/M
         return  composition
 
