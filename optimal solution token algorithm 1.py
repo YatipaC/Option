@@ -36,7 +36,6 @@ class Discrete:
 
 
     def distribution(self, a_star_res, B):
-        print("-------------------------")
         S = np.sum(a_star_res)
         M_star = math.floor(S/self.k)
         B0 = abs(S - M_star*self.k)
@@ -68,6 +67,5 @@ if __name__ == "__main__":
     k = 4
     my_res_1 = Discrete(A, N, k)
     res_1, my_B= my_res_1.preprocess()
-    print(f'a_star is {res_1}\nB is {my_B}')
     res_distri = my_res_1.distribution(res_1, my_B)
 
